@@ -49,7 +49,14 @@ export default function onTouchStart(event) {
   }
   if (e.type === 'touchstart') {
     // don't proceed touch event
-    preventEdgeSwipe(swiper, e, e.targetTouches[0].pageX);
+    // preventEdgeSwipe(swiper, e, e.targetTouches[0].pageX);
+
+    // 修改
+    preventEdgeSwipe(
+      swiper,
+      e,
+      swiper.rotate ? e.targetTouches[0].pageY : e.targetTouches[0].pageX,
+    );
     return;
   }
 
@@ -103,6 +110,13 @@ export default function onTouchStart(event) {
 
   touches.currentX = e.pageX;
   touches.currentY = e.pageY;
+
+  // 修改
+  if (swiper.rotate) {
+    touches.currentX = e.pageY;
+    touches.currentY = e.pageX;
+  }
+
   const startX = touches.currentX;
   const startY = touches.currentY;
 

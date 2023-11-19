@@ -3,11 +3,19 @@ export default function onScroll() {
   const { wrapperEl, rtlTranslate, enabled } = swiper;
   if (!enabled) return;
   swiper.previousTranslate = swiper.translate;
+  // if (swiper.isHorizontal()) {
+  //   swiper.translate = -wrapperEl.scrollLeft;
+  // } else {
+  //   swiper.translate = -wrapperEl.scrollTop;
+  // }
+
+  // 修改
   if (swiper.isHorizontal()) {
-    swiper.translate = -wrapperEl.scrollLeft;
+    swiper.translate = swiper.rotate ? -wrapperEl.scrollTop : -wrapperEl.scrollLeft;
   } else {
-    swiper.translate = -wrapperEl.scrollTop;
+    swiper.translate = swiper.rotate ? -wrapperEl.scrollLeft : -wrapperEl.scrollTop;
   }
+
   // eslint-disable-next-line
   if (swiper.translate === 0) swiper.translate = 0;
 
