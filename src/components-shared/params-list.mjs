@@ -117,5 +117,8 @@ const paramsList = [
   'virtual',
   'zoom',
   'control',
+
+  // 修改（新增）
+  'rotate',
 ];
 export { paramsList };

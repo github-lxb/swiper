@@ -11,9 +11,9 @@ export default function onScroll() {
 
   // 修改
   if (swiper.isHorizontal()) {
-    swiper.translate = swiper.rotate ? -wrapperEl.scrollTop : -wrapperEl.scrollLeft;
+    swiper.translate = swiper.params.rotate ? -wrapperEl.scrollTop : -wrapperEl.scrollLeft;
   } else {
-    swiper.translate = swiper.rotate ? -wrapperEl.scrollLeft : -wrapperEl.scrollTop;
+    swiper.translate = swiper.params.rotate ? -wrapperEl.scrollLeft : -wrapperEl.scrollTop;
   }
 
   // eslint-disable-next-line

@@ -55,7 +55,7 @@ export default function onTouchStart(event) {
     preventEdgeSwipe(
       swiper,
       e,
-      swiper.rotate ? e.targetTouches[0].pageY : e.targetTouches[0].pageX,
+      swiper.params.rotate ? e.targetTouches[0].pageY : e.targetTouches[0].pageX,
     );
     return;
   }
@@ -112,7 +112,7 @@ export default function onTouchStart(event) {
   touches.currentY = e.pageY;
 
   // 修改
-  if (swiper.rotate) {
+  if (params.rotate) {
     touches.currentX = e.pageY;
     touches.currentY = e.pageX;
   }
