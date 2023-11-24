@@ -114,7 +114,7 @@ export default function onTouchStart(event) {
   // 修改
   if (params.rotate) {
     touches.currentX = e.pageY;
-    touches.currentY = e.pageX;
+    touches.currentY = -e.pageX;
   }
 
   const startX = touches.currentX;

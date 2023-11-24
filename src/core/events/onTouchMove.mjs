@@ -38,7 +38,7 @@ export default function onTouchMove(event) {
 
   // 修改
   const pageX = params.rotate ? targetTouch.pageY : targetTouch.pageX;
-  const pageY = params.rotate ? targetTouch.pageX : targetTouch.pageY;
+  const pageY = params.rotate ? -targetTouch.pageX : targetTouch.pageY;
 
   if (e.preventedByNestedSwiper) {
     touches.startX = pageX;
